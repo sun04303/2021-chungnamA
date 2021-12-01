@@ -22,6 +22,7 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 header ul {display: flex;}
@@ -37,6 +38,12 @@ header a:hover {
     color: #fff;
 }
 
+@media screen and (max-width:1024px) {
+    header {
+        padding: 0 100px;
+    }
+}
+
 /* 섹션 */
 
 section > div {
@@ -47,18 +54,56 @@ section > div {
 /* 빵 거리 */
 
 .street {
-    background-image: url(../img/24.jpg);
+    background-image: url(../img/15.jpg);
     background-size: cover;
     background-attachment: fixed;
+
+    position: relative;
 }
 
 .street h2 {
     color: #fff;
-    PADDING: 150px 300px;
+    position: absolute;
+    right: 15%;
+    top: 15%;
+}
+
+.storelist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 10%;
+    top: 12%;
+}
+
+.storelist .item {
+    width: 210px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    justify-content: space-between;
+    transition: .5s;
+}
+
+.storelist .item .title {
+    width: 80px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.storelist .item img {height: 40px;}
+
+.storelist .item:hover {
+    border-bottom: 1px solid #fff;
 }
 
 .repre {
-    background-image: url(../img/2.jpg);
+    background-image: url(../img/1.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
