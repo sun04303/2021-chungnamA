@@ -10,6 +10,22 @@ ul, ol {list-style: none;}
 
 a, a:hover {text-decoration: none;}
 
+.scrole::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrole::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.scrole::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
 /* 헤더 */
 
 header {
@@ -65,7 +81,7 @@ section > div {
     color: #fff;
     position: absolute;
     right: 15%;
-    top: 15%;
+    top: 13%;
 }
 
 /* 빵집 목록 */
@@ -104,10 +120,16 @@ section > div {
     border-bottom: 1px solid #fff;
 }
 
+input[id="one"]:checked ~ .storelist label[for="one"],
+input[id="two"]:checked ~ .storelist label[for="two"],
+input[id="three"]:checked ~ .storelist label[for="three"],
+input[id="four"]:checked ~ .storelist label[for="four"],
+input[id="five"]:checked ~ .storelist label[for="five"] {border-bottom: 1px solid #fff;}
+
 /* 요약정보 */
 
 .summarylist {
-    display: flex;
+    display: none;
     width: 600px;
     height: 730px;
     background-color: rgba(0, 0, 0, .5);
@@ -121,12 +143,10 @@ section > div {
     height: 100%;
     position: absolute;
     color: #fff;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
 }
-
-.summarylist .item:not(:nth-child(1)) {display: none;}
 
 .summarylist .item .shopimg {
     width: 100%;
@@ -138,26 +158,65 @@ section > div {
 
 .summarylist .item .btn {width: 100px;}
 
+input[name="selstore"]:checked ~ .summarylist {display: flex;}
+
+@keyframes w {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
+
+input[id="one"]:checked ~ .summarylist .item:nth-child(1),
+input[id="two"]:checked ~ .summarylist .item:nth-child(2),
+input[id="three"]:checked ~ .summarylist .item:nth-child(3),
+input[id="four"]:checked ~ .summarylist .item:nth-child(4),
+input[id="five"]:checked ~ .summarylist .item:nth-child(5) {
+    display: flex;
+    animation: w 1.5s;
+}
+
 /* 상품목록 */
 
 .itemlist {
-    display: flex;
+    display: none;
     width: 600px;
     height: 730px;
     background-color: rgba(0, 0, 0, .5);
     position: relative;
     top: -60%;
     left: 55%;
+
+    overflow-y: auto;
 }
 
 .itemlist .box {
+    padding: 40px;
     position: absolute;
+    display: none;
 }
 
-.itemlist .box:not(:nth-child(1)) {display: none;}
+.itemlist .box .item {
+    color: #fff;
+    margin-bottom: 20px;
+}
 
-.itemlist .box .item {color: #fff;}
-``
+.itemlist .box .item img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+
+input[name="selstore"]:checked + input[name="viewitem"]:checked ~ .itemlist {display: flex;}
+
+input[id="one"]:checked + input[id="six"]:checked ~ .itemlist .box:nth-child(1),
+input[id="two"]:checked + input[id="seven"]:checked ~ .itemlist .box:nth-child(2),
+input[id="three"]:checked + input[id="eight"]:checked ~ .itemlist .box:nth-child(3),
+input[id="four"]:checked + input[id="nine"]:checked ~ .itemlist .box:nth-child(4),
+input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5) {
+    display: block;
+    animation: w 1.5s;
+}
+
 /* 대표빵 */
 
 .repre {
