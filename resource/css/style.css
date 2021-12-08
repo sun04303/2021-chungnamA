@@ -132,7 +132,6 @@ input[id="five"]:checked ~ .storelist label[for="five"] {border-bottom: 1px soli
     display: none;
     width: 600px;
     height: 730px;
-    background-color: rgba(0, 0, 0, .5);
     position: relative;
     top: 20%;
     left: 25%;
@@ -146,6 +145,7 @@ input[id="five"]:checked ~ .storelist label[for="five"] {border-bottom: 1px soli
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .summarylist .item .shopimg {
@@ -158,7 +158,9 @@ input[id="five"]:checked ~ .storelist label[for="five"] {border-bottom: 1px soli
 
 .summarylist .item .btn {width: 100px;}
 
-input[name="selstore"]:checked ~ .summarylist {display: flex;}
+input[name="selstore"]:checked ~ .summarylist {
+    display: flex;
+}
 
 @keyframes w {
     0% {width: 0;}
@@ -180,18 +182,20 @@ input[id="five"]:checked ~ .summarylist .item:nth-child(5) {
     display: none;
     width: 600px;
     height: 730px;
-    background-color: rgba(0, 0, 0, .5);
     position: relative;
     top: -60%;
     left: 55%;
-
-    overflow-y: auto;
+    
 }
 
 .itemlist .box {
     padding: 40px;
+    height: 100%;
     position: absolute;
     display: none;
+    background-color: rgba(0, 0, 0, .5);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .itemlist .box .item {
@@ -215,6 +219,27 @@ input[id="four"]:checked + input[id="nine"]:checked ~ .itemlist .box:nth-child(4
 input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5) {
     display: block;
     animation: w 1.5s;
+}
+
+@media screen and (max-width:1024px) {
+    .summarylist {
+        height: 400px;
+        top: 52%;
+        left: 5%;
+    }
+
+    .itemlist {
+        width: 300px;
+    }
+
+    .itemlist .box {
+        width: 100%;
+    }
+
+    .itemlist img {
+        width: 100% !important; `
+        height: 210px !important;
+    }
 }
 
 /* 대표빵 */
