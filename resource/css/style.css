@@ -281,93 +281,128 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
     position: absolute;
 
     top: 20%;
-    left: 8%;
+    left: 10%;
 }
 
-.repre .slides {
+.inner {
+    width: 500%;
+    height: 100%;
+
+    transition: .3s;
+
     display: flex;
-    overflow-x: scroll;
-    position: relative;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+    position: absolute;
 }
 
-.repre .slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 100%;
-    height: 400px;
-    scroll-snap-align: center;
-    margin-right: 0px;
-    box-sizing: border-box;
-    color: #fff;
+.image {
+    width: calc(500% / 5);
     background-color: rgba(0, 0, 0, .5);
-    transform-origin: center center;
-    transform: scale(1);
+    padding: 15px;
+    height: 100%;
+    color: #fff;
 }
 
-.repre .slide__text {
-  font-size: 40px;
-  font-weight: bold;
-  font-family: sans-serif;
-}
-
-.repre .slide a {
-  background: none;
-  border: none;
-}
-
-.repre a.slide__prev,
-.repre .slider::before {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  left: 5%;
-}
-
-.repre a.slide__next,
-.repre .slider::after {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  right: 5%;
-}
-
-.repre .slider::before,
-.repre .slider::after,
-.repre .slide__prev,
-.repre .slide__next {
-  position: absolute;
-  top: 48%;
-  width: 35px;
-  height: 35px;
-  border: solid #fff;
-  border-width: 0 4px 4px 0;
-  padding: 3px;
-  box-sizing: border-box;
-}
-
-.repre .slider::before,
-.repre .slider::after {
-    content: "";
-    z-index: 1;
-    background: none;
-    pointer-events: none;
-}
-
-.repre .slider .goods {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    font-size: 18px;
-}
-
-.repre .slider img {
+.image img {
     width: 250px;
     height: 250px;
+    margin-bottom: 15px;
     object-fit: cover;
 }
+
+.labels {
+    width: 100%;
+    height: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5%;
+}
+
+.label, .left-label, .right-label {
+    width: 15px;
+    height: 15px;
+
+    position: relative;
+
+    border: 3px solid #fff;
+
+    margin: 0 4px;
+}
+
+.label > label, .left-label label, .right-label label {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0; top: 0;
+
+    cursor: pointer;
+}
+
+.label label {
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+/* 오른쪽 */
+#button-1-2:checked ~ .slider #button-slide .right-label .label-2 {z-index: 1;}
+#button-2-3:checked ~ .slider #button-slide .right-label .label-3 {z-index: 1;}
+#button-3-4:checked ~ .slider #button-slide .right-label .label-4 {z-index: 1;}
+#button-4-5:checked ~ .slider #button-slide .right-label .label-5 {z-index: 1;}
+#button-5-1:checked ~ .slider #button-slide .right-label .label-1 {z-index: 1;}
+
+#button-1-2:checked ~ .slider #button-slide .left-label .label-2 {z-index: 1;}
+#button-2-3:checked ~ .slider #button-slide .left-label .label-3 {z-index: 1;}
+#button-3-4:checked ~ .slider #button-slide .left-label .label-4 {z-index: 1;}
+#button-4-5:checked ~ .slider #button-slide .left-label .label-5 {z-index: 1;}
+#button-5-1:checked ~ .slider #button-slide .left-label .label-1 {z-index: 1;}
+
+#button-1-2:checked ~ .slider #button-slide .inner {left: -100%;}
+#button-2-3:checked ~ .slider #button-slide .inner {left: -200%;}
+#button-3-4:checked ~ .slider #button-slide .inner {left: -300%;}
+#button-4-5:checked ~ .slider #button-slide .inner {left: -400%;}
+#button-5-1:checked ~ .slider #button-slide .inner {left: 0;}
+
+/* 왼쪽 */
+#button-1-5:checked ~ .slider #button-slide .left-label .label-5 {z-index: 1;}
+#button-5-4:checked ~ .slider #button-slide .left-label .label-4 {z-index: 1;}
+#button-4-3:checked ~ .slider #button-slide .left-label .label-3 {z-index: 1;}
+#button-3-2:checked ~ .slider #button-slide .left-label .label-2 {z-index: 1;}
+#button-2-1:checked ~ .slider #button-slide .left-label .label-1 {z-index: 1;}
+
+#button-1-5:checked ~ .slider #button-slide .right-label .label-5 {z-index: 1;}
+#button-5-4:checked ~ .slider #button-slide .right-label .label-4 {z-index: 1;}
+#button-4-3:checked ~ .slider #button-slide .right-label .label-3 {z-index: 1;}
+#button-3-2:checked ~ .slider #button-slide .right-label .label-2 {z-index: 1;}
+#button-2-1:checked ~ .slider #button-slide .right-label .label-1 {z-index: 1;}
+
+#button-1-5:checked ~ .slider #button-slide .inner {left: -400%;}
+#button-5-4:checked ~ .slider #button-slide .inner {left: -300%;}
+#button-4-3:checked ~ .slider #button-slide .inner {left: -200%;}
+#button-3-2:checked ~ .slider #button-slide .inner {left: -100%;}
+#button-2-1:checked ~ .slider #button-slide .inner {left: 0;}
+
+/* 크게보기 */
+
+.view {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    top: 40%;
+    left: 50%;
+}
+
+.view img {
+    position: absolute;
+    width: 100%;`
+    height: 100%;
+    object-fit: cover;
+}
+
 
 /* 추천 */
 

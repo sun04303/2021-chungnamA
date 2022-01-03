@@ -262,61 +262,81 @@
         <div class="repre">
             <h2>대표빵</h2>
 
+            <!-- button-slide -->
+
+            <!-- left -->
+            <!-- 원본 -->
+            <input type="radio" name="button" id="button-1-5" hidden>
+            <input type="radio" name="button" id="button-5-4" hidden>
+            <input type="radio" name="button" id="button-4-3" hidden>
+            <input type="radio" name="button" id="button-3-2" hidden>
+            <input type="radio" name="button" id="button-2-1" hidden>
+            
+            <!-- right -->
+            <!-- 원본 -->
+            <input type="radio" name="button" id="button-1-2" hidden>
+            <input type="radio" name="button" id="button-2-3" hidden>
+            <input type="radio" name="button" id="button-3-4" hidden>
+            <input type="radio" name="button" id="button-4-5" hidden>
+            <input type="radio" name="button" id="button-5-1" hidden checked>
+
             <div class="slider">
-                <div class="slides">
-                    <div id="slides__1" class="slide">
-                        <h3 class="mb-3">성심당</h3>
-                        <div class="goods">
-                            <img src="./resource/img/item/성심당-소보로.png" alt="goods">
-                            <span class="my-2">튀김 소보로빵</span>
-                            <span class="my-2">1,500\</span>
+                <div id="button-slide" class="slide">
+                    <div class="inner">
+                        <div class="image">
+                            <img src="./resource/img/item/성심당-소보로.png" alt="bread">
+                            <h4>성심당</h4>
+                            <span>튀김 소보로빵 / 1,500\</span>
                         </div>
-                        <a class="slide__prev" href="#slides__5" title="Next"></a>
-                        <a class="slide__next" href="#slides__2" title="Next"></a>
+                        <div class="image">
+                            <img src="./resource/img/item/르뺑99-1-소보로.png" alt="bread">
+                            <h4>르뺑99-1</h4>
+                            <span>소보로빵 / 1,500\</span>
+                        </div>
+                        <div class="image">
+                            <img src="./resource/img/item/하레하레-바게트.PNG" alt="bread">
+                            <h4>하레하레</h4>
+                            <span>마늘 홀릭 / 4,900\</span>
+                        </div>
+                        <div class="image">
+                            <img src="./resource/img/item/한스브레드-스콘.jpg" alt="bread">
+                            <h4>한스브레드</h4>
+                            <span>스콘 / 3,200\</span>
+                        </div>
+                        <div class="image">
+                            <img src="./resource/img/item/꾸드뱅-스콘.jpg" alt="bread">
+                            <h4>꾸드뱅</h4>
+                            <span>초코스콘 / 3,300\</span>
+                        </div>
                     </div>
-                    <div id="slides__2" class="slide">
-                        <h3 class="mb-3">르뺑99-1</h3>
-                        <div class="goods">
-                            <img src="./resource/img/item/르뺑99-1-소보로.png" alt="goods">
-                            <span class="my-2">소보로빵</span>
-                            <span class="my-2">1,500\</span>
+                    <div class="labels">
+                        <div class="left-label">
+                            <!-- 원본 -->
+                            <label for="button-1-5" class="label-1"></label>
+                            <label for="button-5-4" class="label-5"></label>
+                            <label for="button-4-3" class="label-4"></label>
+                            <label for="button-3-2" class="label-3"></label>
+                            <label for="button-2-1" class="label-2"></label>
                         </div>
-                        <a class="slide__prev" href="#slides__1" title="Prev"></a>
-                        <a class="slide__next" href="#slides__3" title="Next"></a>
-                    </div>
-                    <div id="slides__3" class="slide">
-                        <h3 class="mb-3">하레하레</h3>
-                        <div class="goods">
-                            <img src="./resource/img/item/하레하레-바게트.PNG" alt="goods">
-                            <span class="my-2">마늘 홀릭</span>
-                            <span class="my-2">4,900\</span>
+                        <div class="right-label">
+                            <!-- 원본 -->
+                            <label for="button-1-2" class="label-1"></label>
+                            <label for="button-2-3" class="label-2"></label>
+                            <label for="button-3-4" class="label-3"></label>
+                            <label for="button-4-5" class="label-4"></label>
+                            <label for="button-5-1" class="label-5"></label>
                         </div>
-                        <a class="slide__prev" href="#slides__2" title="Prev"></a>
-                        <a class="slide__next" href="#slides__4" title="Next"></a>
-                    </div>
-                    <div id="slides__4" class="slide">
-                        <h3 class="mb-3">한스브레드</h3>
-                        <div class="goods">
-                            <img src="./resource/img/item/한스브레드-스콘.jpg" alt="goods">
-                            <span class="my-2">스콘</span>
-                            <span class="my-2">3,200\</span>
-                        </div>
-                        <a class="slide__prev" href="#slides__3" title="Prev"></a>
-                        <a class="slide__next" href="#slides__5" title="Prev"></a>
-                    </div>
-                    <div id="slides__5" class="slide">
-                        <h3 class="mb-3">꾸드뱅</h3>
-                        <div class="goods">
-                            <img src="./resource/img/item/꾸드뱅-스콘.jpg" alt="goods">
-                            <span class="my-2">초코스콘</span>
-                            <span class="my-2">3,300\</span>
-                        </div>
-                        <a class="slide__prev" href="#slides__4" title="Prev"></a>
-                        <a class="slide__next" href="#slides__1" title="Prev"></a>
                     </div>
                 </div>
             </div>
 
+            <div class="view">
+                <img src="./resource/img/item/성심당-소보로.png" alt="big_bread">
+                <img src="./resource/img/item/르뺑99-1-소보로.png" alt="big_bread">
+                <img src="./resource/img/item/하레하레-바게트.PNG" alt="big_bread">
+                <img src="./resource/img/item/한스브레드-스콘.jpg" alt="big_bread">
+                <img src="./resource/img/item/꾸드뱅-스콘.jpg" alt="big_bread">
+            </div>
         </div>
 
         <div class="sug">
