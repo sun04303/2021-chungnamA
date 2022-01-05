@@ -510,9 +510,10 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
 /* 갤러리 */
 
 .gal {
-    background-image: url(../img/99-1.jpg);
+    background-image: url(../img/test.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: bottom;
 
     position: relative;
 }
@@ -523,6 +524,58 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
 }
 
 .gal img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+.gal .box {
+    position: absolute;
+    top: 30%;
+    left: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gal .box > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gal .top {width: 1350px;}
+.gal .bot {width: 1050px;}
+
+.gal .item {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #000;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    position: relative;
+}
+
+.gal .item .info {
+    /* transform: rotateZ(-45deg); */
+    position: absolute;
+    transition: .5s;
     width: 300px;
     height: 300px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+    bottom: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gal .item:hover .info {
+    bottom: 0;
 }
