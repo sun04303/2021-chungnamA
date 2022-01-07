@@ -10,14 +10,39 @@ ul, ol {list-style: none;}
 
 a, a:hover {text-decoration: none;}
 
-.scrole::-webkit-scrollbar {
-    width: 10px;
-}
+.scrole::-webkit-scrollbar {width: 10px;}
 
-h2 {
+.main h2 {
     color: #fff;
     position: absolute;
 }
+
+.btn-cus { 
+    position: relative;
+    padding: 6px 12px;
+    border: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+    transition: .5s;
+    cursor: pointer;
+    font-size:14px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.btn-cus::before,
+.btn-cus::after {
+    content: '';
+    position: absolute;
+    height: 5px; width: 0;
+    background-color: #333;
+    transition: 0.35s;
+}
+
+.btn-cus::before { left: 0; top: 0; }
+.btn-cus::after { right: 0; bottom: 0; }
+.btn-cus:hover { background-color: #333; color: #fff; }
+.btn-cus:hover::before, .btn-cus:hover::after { width: 100%; }
 
 .scrole::-webkit-scrollbar-thumb {
     background-color: gray;
@@ -37,6 +62,16 @@ header {
     width: 100%;
     height: 100px;
     padding: 0 300px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__header {
+    width: 100%;
+    height: 100px;
+    padding: 0 300px;
     background-color: rgba(0, 0, 0, .5);
     display: flex;
     justify-content: space-between;
@@ -52,12 +87,10 @@ header li {margin-left: 25px;}
 
 header a {
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
 }
 
-header a:hover {
-    color: #fff;
-}
+header a:hover {color: #fff;}
 
 @media screen and (max-width:1024px) {
     header {
@@ -67,7 +100,7 @@ header a:hover {
 
 /* 섹션 */
 
-section > div {
+.main > div {
     width: 100%;
     height: 937px;
 }
@@ -119,9 +152,7 @@ section > div {
 
 .storelist .item img {height: 40px;}
 
-.storelist .item:hover {
-    border-bottom: 1px solid #fff;
-}
+.storelist .item:hover {border-bottom: 1px solid #fff;}
 
 input[id="one"]:checked ~ .storelist label[for="one"],
 input[id="two"]:checked ~ .storelist label[for="two"],
@@ -165,9 +196,7 @@ input[id="five"]:checked ~ .storelist label[for="five"] {border-bottom: 1px soli
 
 .summarylist .item .btn {width: 100px;}
 
-input[name="selstore"]:checked ~ .summarylist {
-    display: flex;
-}
+input[name="selstore"]:checked ~ .summarylist {display: flex;}
 
 @keyframes w {
     0% {width: 0;}
@@ -422,10 +451,8 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
 #image-2:checked ~ .view .image-2,
 #image-3:checked ~ .view .image-3,
 #image-4:checked ~ .view .image-4,
-#image-5:checked ~ .view .image-5 {opacity: 1;}
-
-@media screen and (max-width:1024px) {
-
+#image-5:checked ~ .view .image-5 {
+    opacity: 1;
 }
 
 /* 추천 */
@@ -463,13 +490,8 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
     transform: scale(1.05);
 }
 
-.sug .item .mini-circle:nth-child(odd) {
-    top: 15%;
-}
-
-.sug .item .mini-circle:nth-child(even) {
-    bottom: 15%;
-}
+.sug .item .mini-circle:nth-child(odd) {top: 15%;}
+.sug .item .mini-circle:nth-child(even) {bottom: 15%;}
 
 .sug .circle {
     width: 350px;
@@ -498,9 +520,7 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
     position: relative;
 }
 
-.sug .mini-circle h4 {
-    font-weight: bold;
-}
+.sug .mini-circle h4 {font-weight: bold;}
 
 .circle-1, .mini-circle-1 {background-color: #faf;}
 .circle-2, .mini-circle-2 {background-color: #faa;}
@@ -587,9 +607,7 @@ input[id="five"]:checked + input[id="ten"]:checked ~ .itemlist .box:nth-child(5)
 
 /* 푸터 */
 
-footer {
-    background-color: #222;
-}
+footer {background-color: #222;}
 
 footer .box {
     height: 200px;
@@ -604,13 +622,9 @@ footer .footer__menu a {
     padding: 0 10px;
 }
 
-footer .footer__menu a:not(:first-child) {
-    border-left: 1px solid #fff;
-}
+footer .footer__menu a:not(:first-child) {border-left: 1px solid #fff;}
 
-footer .footer__menu a:hover {
-    text-decoration: underline;
-}
+footer .footer__menu a:hover {text-decoration: underline;}
 
 footer .copyright {
     color: #fff;
@@ -639,6 +653,47 @@ footer .sns .item:hover {
     transform: scale(1.1);
 }
 
-footer .sns .item img {
-    width: 100%;
+footer .sns .item img {width: 100%;}
+
+/* 빵집 순례 */
+
+.shoplist .hidden {
+    max-height: 0;
+    display: flex;
+    overflow: hidden;
+    transition: .5s;
 }
+
+.shoplist .box {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.shoplist .shop img {
+    height: 215px;
+    object-fit: cover;
+}
+
+.shoplist .shop .card-text {
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+#openshop:checked ~ .hidden {max-height: 410px;}
+#openshop:checked ~ label[for=openshop] {display: none;}
+
+.shoplist .goods img {
+    height: 286px;
+    object-fit: cover;
+}
+
+
+#opengoods:checked ~ .hidden {max-height: 410px;}
+#opengoods:checked ~ label[for=opengoods] {display: none;}
