@@ -26,8 +26,6 @@ a, a:hover {text-decoration: none;}
     transition: .5s;
     cursor: pointer;
     font-size:14px;
-    left:50%;
-    transform:translateX(-50%);
 }
 
 .btn-cus::before,
@@ -657,18 +655,16 @@ footer .sns .item img {width: 100%;}
 
 /* 빵집 순례 */
 
-.shoplist .hidden {
-    max-height: 0;
-    display: flex;
-    overflow: hidden;
-    transition: .5s;
-}
-
 .shoplist .box {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
 
     margin-bottom: 25px;
+}
+
+.shoplist .card {
+    justify-self: center;
 }
 
 .shoplist .shop img {
@@ -686,14 +682,69 @@ footer .sns .item img {width: 100%;}
     -webkit-box-orient: vertical;
 }
 
-#openshop:checked ~ .hidden {max-height: 410px;}
-#openshop:checked ~ label[for=openshop] {display: none;}
-
 .shoplist .goods img {
     height: 286px;
     object-fit: cover;
 }
 
+/* 찜하기 */
 
-#opengoods:checked ~ .hidden {max-height: 410px;}
-#opengoods:checked ~ label[for=opengoods] {display: none;}
+.cart {
+    width: 125px;
+    height: 180px;
+    padding: 12.5px;
+    border: 1px solid #000;
+
+    position: fixed;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart i {
+    font-size: 40px;
+}
+
+.cart img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* 상세보기 */
+
+.detail .box {
+    margin: 68.5px 0;
+
+    display: flex;
+}
+
+.detail .left {width: 40%;}
+
+.detail .left img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.detail .right {
+    width: 35%;
+    padding-top: 80px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail .right .bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail .right .bot input {width: 370px;}
